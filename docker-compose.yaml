@@ -10,8 +10,8 @@ nginx:
     source: ./nginx/nginx.conf
     target: /etc/nginx/nginx.conf
   depends_on:
-  - backend 
-  - frontend
+  - back-end 
+  - front-end
 
 back-end:
   build: ./back-end
@@ -23,12 +23,12 @@ back-end:
 
 
 front-end:
-  build: ./frontend
-  image: pstyp94/front-end
+  build: ./front-end
+  image: pstyp94/frontend
   ports:
    - target: 4200
      published: 4200
      protocol: tcp
   depends_on:
-    - backend 
+    - back-end 
 
