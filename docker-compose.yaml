@@ -1,0 +1,34 @@
+version: '3.3'
+nginx:
+  image: nginx:latest
+  ports:
+  - target: 80
+    published: 80
+    protocol: tcp
+  volumes:
+  - type: bind
+    source: ./nginx/nginx.conf
+    target: /etc/nginx/nginx.conf
+  depends_on:
+  - backend 
+  - frontend
+
+back-end:
+  build: ./back-end
+  image: pstyp94/backend
+  ports:
+  - target: 9966
+    published: 9966
+    protocol: tcp
+
+
+front-end:
+  build: ./frontend
+  image: pstyp94/front-end
+  ports:
+   - target: 4200
+     published: 4200
+     protocol: tcp
+  depends_on:
+    - backend 
+
