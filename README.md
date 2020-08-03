@@ -12,4 +12,4 @@
 
 ## CI Pipeline
 
- ![CI_Pipeline](https://drive.google.com/file/d/10m09DcrCyuMpvCaLbZtI-iG7z0CHhDE7/view?usp=sharing)
+ ![CI_Pipeline](https://imagizer.imageshack.com/img924/5483/RfIR55.png)
