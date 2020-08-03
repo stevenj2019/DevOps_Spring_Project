@@ -1,5 +1,10 @@
 pipeline {
     stages{
+        stage('Test Code'){
+            steps{
+                sh "/home/jenkins/DevOps_Spring_Project/Jenkins_scripts/test_app.sh"
+            }
+        }
         stage('Build Java') {
             steps {
                 sh "/home/jenkins/DevOps_Spring_Project/Jenkins_scripts/build_app.sh"
