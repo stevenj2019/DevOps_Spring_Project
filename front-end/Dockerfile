@@ -1,6 +1,6 @@
 FROM node
-RUN sudo apt update
-COPY . .
+WORKDIR /app2
+COPY . /app2
 RUN npm install
 RUN npm install -g @angular/cli@latest
 EXPOSE 4200
