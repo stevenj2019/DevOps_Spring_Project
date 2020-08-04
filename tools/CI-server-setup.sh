@@ -1,8 +1,13 @@
 #!/bin/bash 
 
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
+
 echo "Running Prerequisites"
 sudo DEBIAN_FRONTEND=noninteractive apt-get update -qq < /dev/null > /dev/null
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq python-software-properties ca-certificates jq curl apt-transport-https lsb-release gnupg< /dev/null > /dev/null
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq ca-certificates jq curl apt-transport-https lsb-release gnupg< /dev/null > /dev/null
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq nodejs git openjdk-8-jre maven< /dev/null > /dev/null
 
 echo "Installing npm"
@@ -40,7 +45,7 @@ npm install -g protractor
 
 echo "Configuring Jenkins user"
 sudo useradd -m -s /bin/bash jenkins
-echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+sudo echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 sudo usermod -aG docker jenkins 
 
 echo "Installing Jenkins"
