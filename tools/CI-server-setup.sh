@@ -7,8 +7,7 @@ fi
 
 echo "Running Prerequisites"
 sudo DEBIAN_FRONTEND=noninteractive apt-get update -qq < /dev/null > /dev/null
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq ca-certificates jq curl apt-transport-https lsb-release gnupg< /dev/null > /dev/null
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq nodejs git openjdk-8-jre maven< /dev/null > /dev/null
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq ca-certificates jq curl apt-transport-https lsb-release gnupg nodejs git openjdk-8-jre maven unzip< /dev/null > /dev/null
 
 echo "Installing npm"
 curl -sL https://deb.nodesource.com/setup_6.x | sudo bash
@@ -18,8 +17,8 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 echo "Installing kubectl"
 curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
-mv kubectl /usr/local/bin/kubectl
-chmod a+x /usr/local/bin/kubectl
+sudo mv kubectl /usr/local/bin/kubectl
+sudo chmod a+x /usr/local/bin/kubectl
 
 echo "Install Docker"
 curl https://get.docker.com | sudo bash
@@ -35,13 +34,13 @@ unzip terraform_*_linux_*.zip
 sudo mv terraform /usr/local/bin
 
 echo "Refrshing Angular"
-npm uninstall -g angular-cli @angular/cli
-npm cache clean
-npm install -g @angular/cli@latest
+sudo npm uninstall -g angular-cli @angular/cli
+sudo npm cache clean
+sudo npm install -g @angular/cli@latest
 
 echo "Installing Testing Frameworks"
-npm install karma 
-npm install -g protractor
+sudo npm install karma 
+sudo npm install -g protractor
 
 echo "Configuring Jenkins user"
 sudo useradd -m -s /bin/bash jenkins
