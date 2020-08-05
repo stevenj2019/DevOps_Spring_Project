@@ -36,10 +36,14 @@ user@server:~$ sudo bash tools/CI-server-setup.sh
 
 ## Docker 
 
+Dockerfiles and Docker-Compose is use to build our images. However it is not used to Deployment
 
 ## Infrastructure 
 
-![Diagram Here](https://link-to-diag/diag.png)
+### Infrasturcture Diagram 
+![Infra-Diagram](https://imagizer.imageshack.com/img923/5626/piEWWK.png)
+
+### kubernetes 
 
 ### Pricing 
 
