@@ -1,4 +1,3 @@
 cd front-end
-ng test --watch=false --browsers=ChromeHeadless
-#ng serve
-#ng e2e
+ng build --prod --base-href=/petclinic/ --deploy-url=/petclinic/
+compodoc -p src/tsconfig.app.json -d docs
