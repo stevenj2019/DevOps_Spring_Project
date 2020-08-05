@@ -17,8 +17,7 @@
 + Karma + e2e
 + Docker 
 + Terraform 
-+ Kubernetes 
-+ Ansible (Maybe)
++ Kubernetes
 
 ## CI Pipeline
 
@@ -33,7 +32,22 @@ user@server:~$ sudo bash tools/CI-server-setup.sh
 
 ## Application Build 
 
+Front end build done using Angular CLI 
 
+```console
+user@server:~$ cd back-end
+user@server:~$ ./mvnw spring-boot:run
+```
+
+This file will also be integrated into our Pipeline job
+
+Back end build has been done using Maven 
+
+```console
+user@server:~$ cd front-end
+user@server:~$ ng build --prod --base-href=/petclinic/ --deploy-url=/petclinic/
+user@server:~$ compodoc -p src/tsconfig.app.json -d docs
+```
 ## Docker 
 
 Dockerfiles and Docker-Compose is use to build our images. However it is not used to Deployment
