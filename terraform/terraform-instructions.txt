@@ -1,0 +1,1 @@
+Initialise a new resource group and a kubernetes cluster for the deployment of kubernetes pods in /kubernetes.
