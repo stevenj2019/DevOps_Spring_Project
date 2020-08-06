@@ -67,3 +67,4 @@ To save Money we could consider:
 + Reserved Vm Instance (up to 72%)
 + Consult Sales
 + Lower VM tier (could cause stability issues)
+
