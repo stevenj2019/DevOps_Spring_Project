@@ -2,7 +2,7 @@ version: '3.3'
 services:
   nginx:
     build: ./nginx
-    image: pstyp94/petginx
+    image: pstyp94/petginx:${BUILD_NUMBER}
     ports:
     - target: 80
       published: 80
@@ -13,7 +13,7 @@ services:
 
   mysql:
     build: ./mysql
-    image: pstyp94/pet-db
+    image: pstyp94/pet-db:${BUILD_NUMBER}
     ports:
     - target: 3306
       published: 3306
@@ -22,7 +22,7 @@ services:
 
   back-end:
     build: ./back-end
-    image: pstyp94/backend
+    image: pstyp94/backend:${BUILD_NUMBER}
     ports:
     - target: 9966
       published: 9966
@@ -31,7 +31,7 @@ services:
 
   front-end:
     build: ./front-end
-    image: pstyp94/frontend
+    image: pstyp94/frontend:${BUILD_NUMBER}
     ports:
     - target: 4200
       published: 4200
