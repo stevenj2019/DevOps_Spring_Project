@@ -13,12 +13,12 @@ pipeline {
         //}
         stage('Dockerize java Applications') {
             steps {
-                sh "/home/jenkins/DevOps_Spring_Project/Jenkins_scripts/build_image.sh"
+                sh "/home/jenkins/.jenkins/workspace/Spring/Jenkins_scripts/build_image.sh"
             }
         }
         stage('Build Infra') {
             steps {
-                sh "/home/jenkins/DevOps_Spring_Project/Jenkins_scripts/build_infra.sh"
+                sh "/home/jenkins/.jenkins/workspace/Spring/Jenkins_scripts/build_infra.sh"
             }
         }
     }
