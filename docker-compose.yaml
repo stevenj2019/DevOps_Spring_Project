@@ -1,18 +1,24 @@
 version: '3.3'
 services:
   nginx:
-    image: nginx:latest
+    build: ./nginx
+    image: pstyp94/petginx
     ports:
     - target: 80
       published: 80
       protocol: tcp
-    volumes:
-    - type: bind
-      source: ./nginx/nginx.conf
-      target: /etc/nginx/nginx.conf
     depends_on:
     - back-end 
     - front-end
+
+  mysql:
+    build: ./mysql
+    image: pstyp94/pet-db
+    ports:
+    - target: 3306
+      published: 3306
+      protocol: tcp
+      
 
   back-end:
     build: ./back-end
