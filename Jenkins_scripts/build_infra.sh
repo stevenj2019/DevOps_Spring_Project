@@ -1,5 +1,7 @@
 az aks get-credentials --resource-group finalproject --name cluster
-cd kubernetes
-kubectl apply -f backend.yaml
-kubectl apply -f frontend.yaml
-kubectl apply -f nginx.yaml
+cd terraform
+terraform init 
+terraform apply -auto-approve
+cd ../kubernetes
+kubectl set image deployment/petclinic petclinic=pstyp94/backend:latest
+kubectl set image deployment/frontend frontend=pstyp94/frontend:latest
