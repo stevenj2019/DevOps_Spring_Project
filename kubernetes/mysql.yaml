@@ -20,7 +20,10 @@ spec:
         image: pstyp94/pet-db
         env:
             - name: MYSQL_ROOT_PASSWORD
-              value: petclinic
+              valueFrom:
+                      secretKeyRef:
+                              name: dbpass
+                              key: dbpass
         ports:
           - containerPort: 3306
 

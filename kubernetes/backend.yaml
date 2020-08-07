@@ -18,9 +18,6 @@ spec:
       containers:
       - name: petclinic
         image: pstyp94/backend
-        env:
-          - name: MYSQL_ROOT_PASSWORD
-            value: petclinic
         ports:
           - containerPort: 9966
 
