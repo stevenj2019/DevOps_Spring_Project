@@ -13,7 +13,7 @@ pipeline {
         //}
         stage('Dockerize java Applications') {
             steps {
-                sh "sudo bash ./Jenkins_scripts/build_image.sh"
+                sh "sudo bash ./Jenkins_scripts/build_image.sh ${BUILD_NUMBER}"
             }
         }
         stage('Build Infra') {
