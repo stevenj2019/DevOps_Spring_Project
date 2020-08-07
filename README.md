@@ -57,8 +57,14 @@ Dockerfiles and Docker-Compose is use to build our images. However it is not use
 ### Infrasturcture Diagram 
 ![Infra-Diagram](https://imagizer.imageshack.com/img923/5626/piEWWK.png)
 
-### kubernetes 
-
+### Kubernetes
+Initial launch commands:
+ 
+```console
+user@server:~$ kubectl apply -f mysql.yaml
+user@server:~$ kubectl apply -f backend.yaml
+user@server:~$ kubectl apply -f frontend.yaml
+```
 ### Pricing 
 
 Estimated Costs = £95.58 
